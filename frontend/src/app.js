@@ -5,8 +5,6 @@ export class App {
     this.http = new HttpClient();
 
     this.message = 'Hello World! (From Aurelia Frontend)';
-    this.message2 = 'Hello World! (Loading from Backend)';
-    this.message3 = 'Hello World! (Loading from Database)';
   }
 
   activate() {

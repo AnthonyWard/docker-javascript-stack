@@ -26,8 +26,10 @@ define('app',['exports', 'aurelia-fetch-client'], function (exports, _aureliaFet
     App.prototype.activate = function activate() {
       var _this = this;
 
-      this.http.fetch('http://localhost:8080', { 'mode': 'no-cors' }).then(function (data) {
-        _this.message2 = JSON.stringify(data);
+      this.http.fetch('http://localhost:8080').then(function (data) {
+        return data.json();
+      }).then(function (json) {
+        _this.message2 = json.message;
       }).catch(function (err) {
         _this.message2 = err.toString();
       });
@@ -95,5 +97,5 @@ define('resources/index',["exports"], function (exports) {
   exports.configure = configure;
   function configure(config) {}
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <h1>${message}</h1>\n  <h1>${message2}</h1>\n  <h1>${message3}</h1>\n  \n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\r\n  <h1>${message}</h1>\r\n  <h1>${message2}</h1>\r\n  <h1>${message3}</h1>\r\n  \r\n</template>\r\n"; });
 //# sourceMappingURL=app-bundle.js.map

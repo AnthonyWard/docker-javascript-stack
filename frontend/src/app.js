@@ -10,9 +10,11 @@ export class App {
   }
 
   activate() {
-    this.http.fetch('http://localhost:8080', {'mode': 'no-cors'}).then(data => {
-      this.message2 = JSON.stringify(data);
-    }).catch(err => {
+    this.http.fetch('http://localhost:8080').then(data => data.json())
+    .then(json => {
+      this.message2 = json.message;
+    })
+    .catch(err => {
       this.message2 = err.toString();
     })
   }

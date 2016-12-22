@@ -1,0 +1,12 @@
+version: '2'
+services:
+  frontend:
+    image: "frontend"
+    ports:
+     - "9000:80"
+    links: ["backend"]
+  backend:
+    image: "backend"
+    ports:
+     - "8080:8080"
+     

@@ -19,8 +19,6 @@ define('app',['exports', 'aurelia-fetch-client'], function (exports, _aureliaFet
       this.http = new _aureliaFetchClient.HttpClient();
 
       this.message = 'Hello World! (From Aurelia Frontend)';
-      this.message2 = 'Hello World! (Loading from Backend)';
-      this.message3 = 'Hello World! (Loading from Database)';
     }
 
     App.prototype.activate = function activate() {
@@ -97,5 +95,5 @@ define('resources/index',["exports"], function (exports) {
   exports.configure = configure;
   function configure(config) {}
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\r\n  <h1>${message}</h1>\r\n  <h1>${message2}</h1>\r\n  <h1>${message3}</h1>\r\n  \r\n</template>\r\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <h1>${message}</h1>\n  <h1>${message2}</h1>\n  <h1>${message3}</h1>\n  \n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map

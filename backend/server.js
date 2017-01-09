@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 
 app.get('/', function (req, res) {
-  res.json({ message: 'Hello from the backend' });
+  res.json({ message: 'Hello from the backend 3' });
 });
 
 app.listen(PORT);
